@@ -103,3 +103,5 @@ nfl-data
 additional-practice
 palmer-penguins-review
 use-the-penguins-dataset-from-the-palmerpenguins-pacakge-for-the-following
+diamonds-practice
+use-the-diamonds-data-set-found-in-the-ggplot2-package-to-answer-these-questions.-you-may-want-to-review-the-data-before-starting-using-the-help-options.

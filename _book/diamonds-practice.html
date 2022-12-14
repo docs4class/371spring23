@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Page not found | BADM 371 Intro to Data Analytics</title>
+<title>Chapter 25 Diamonds Practice | BADM 371 Intro to Data Analytics</title>
 <meta name="author" content="BADM 371">
-<meta name="description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta name="description" content="25.1 Use the diamonds data set found in the ggplot2 package to answer these questions. You may want to review the data before starting using the help options. How many diamonds in this set have a...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
-<meta property="og:title" content="Page not found | BADM 371 Intro to Data Analytics">
+<meta property="og:title" content="Chapter 25 Diamonds Practice | BADM 371 Intro to Data Analytics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta property="og:description" content="25.1 Use the diamonds data set found in the ggplot2 package to answer these questions. You may want to review the data before starting using the help options. How many diamonds in this set have a...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Page not found | BADM 371 Intro to Data Analytics">
-<meta name="twitter:description" content="The page you requested cannot be found (perhaps it was moved or renamed). You may want to try searching to find the page's new location, or use the table of contents to find the page you are...">
+<meta name="twitter:title" content="Chapter 25 Diamonds Practice | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="25.1 Use the diamonds data set found in the ggplot2 package to answer these questions. You may want to review the data before starting using the help options. How many diamonds in this set have a...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -67,7 +67,7 @@
 <li><a class="" href="more-dplyr-excercies.html"><span class="header-section-number">22</span> More DPLYR Excercies</a></li>
 <li><a class="" href="nfl-data.html"><span class="header-section-number">23</span> NFL Data</a></li>
 <li><a class="" href="palmer-penguins-review.html"><span class="header-section-number">24</span> Palmer Penguins Review</a></li>
-<li><a class="" href="diamonds-practice.html"><span class="header-section-number">25</span> Diamonds Practice</a></li>
+<li><a class="active" href="diamonds-practice.html"><span class="header-section-number">25</span> Diamonds Practice</a></li>
 </ul>
 
         <div class="book-extra">
@@ -75,18 +75,122 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="page-not-found" class="section level1">
-<h1>Page not found<a class="anchor" aria-label="anchor" href="#page-not-found"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="diamonds-practice" class="section level1" number="25">
+<h1>
+<span class="header-section-number">25</span> Diamonds Practice<a class="anchor" aria-label="anchor" href="#diamonds-practice"><i class="fas fa-link"></i></a>
 </h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="use-the-diamonds-data-set-found-in-the-ggplot2-package-to-answer-these-questions.-you-may-want-to-review-the-data-before-starting-using-the-help-options." class="section level2" number="25.1">
+<h2>
+<span class="header-section-number">25.1</span> Use the <code>diamonds</code> data set found in the <code>ggplot2</code> package to answer these questions. You may want to review the data before starting using the help options.<a class="anchor" aria-label="anchor" href="#use-the-diamonds-data-set-found-in-the-ggplot2-package-to-answer-these-questions.-you-may-want-to-review-the-data-before-starting-using-the-help-options."><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>How many diamonds in this set have a <code>cut</code> considered ideal?</li>
+</ol>
+<pre><code>#&gt; # A tibble: 1 × 1
+#&gt;       n
+#&gt;   &lt;int&gt;
+#&gt; 1 21551</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>How many diamonds in this set have a <code>cut</code> considered ideal and have a color of E?</li>
+</ol>
+<pre><code>#&gt; # A tibble: 1 × 1
+#&gt;       n
+#&gt;   &lt;int&gt;
+#&gt; 1  3903</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><ol start="2" style="list-style-type: decimal">
+<li>How many diamonds in this set have a <code>cut</code> considered ideal and have a color of E or D?</li>
+</ol></li>
+</ol>
+<pre><code>#&gt; # A tibble: 1 × 1
+#&gt;       n
+#&gt;   &lt;int&gt;
+#&gt; 1  6737</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Organize the average price by cut in descending order.</li>
+</ol>
+<pre><code>#&gt; # A tibble: 5 × 2
+#&gt;   cut        mean
+#&gt;   &lt;ord&gt;     &lt;dbl&gt;
+#&gt; 1 Premium   4584.
+#&gt; 2 Fair      4359.
+#&gt; 3 Very Good 3982.
+#&gt; 4 Good      3929.
+#&gt; 5 Ideal     3458.</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Determine the average price and standard deviation for <code>ideal</code> cut diamonds.</li>
+</ol>
+<pre><code>#&gt; # A tibble: 1 × 2
+#&gt;    mean std_dev
+#&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+#&gt; 1 3458.   3808.</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Organize the average price by cut and color in descending order.</li>
+</ol>
+<pre><code>#&gt; # A tibble: 35 × 3
+#&gt; # Groups:   cut [5]
+#&gt;    cut       color price
+#&gt;    &lt;ord&gt;     &lt;ord&gt; &lt;dbl&gt;
+#&gt;  1 Premium   J     6295.
+#&gt;  2 Premium   I     5946.
+#&gt;  3 Very Good I     5256.
+#&gt;  4 Premium   H     5217.
+#&gt;  5 Fair      H     5136.
+#&gt;  6 Very Good J     5104.
+#&gt;  7 Good      I     5079.
+#&gt;  8 Fair      J     4976.
+#&gt;  9 Ideal     J     4918.
+#&gt; 10 Fair      I     4685.
+#&gt; # … with 25 more rows</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Use ggplot2 to make a plot similar to this:</li>
+</ol>
+<div class="inline-figure"><img src="40-diamonds_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
+<ol start="8" style="list-style-type: decimal">
+<li><ol start="7" style="list-style-type: decimal">
+<li>Use ggplot2 to make a plot similar to this:</li>
+</ol></li>
+</ol>
+<div class="inline-figure"><img src="40-diamonds_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<ol start="9" style="list-style-type: decimal">
+<li>Predict price of a 2.3 carat diamond with a table of 70 and a depth of 55.</li>
+</ol>
+<pre><code>#&gt; [1] 15447.52</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>In descending order, how many diamonds are there of each clarity?</li>
+</ol>
+<pre><code>#&gt; # A tibble: 8 × 2
+#&gt;   clarity     n
+#&gt;   &lt;ord&gt;   &lt;int&gt;
+#&gt; 1 SI1     13065
+#&gt; 2 VS2     12258
+#&gt; 3 SI2      9194
+#&gt; 4 VS1      8171
+#&gt; 5 VVS2     5066
+#&gt; 6 VVS1     3655
+#&gt; 7 IF       1790
+#&gt; 8 I1        741</code></pre>
+
+</div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
+<div class="prev"><a href="palmer-penguins-review.html"><span class="header-section-number">24</span> Palmer Penguins Review</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    </div>
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#diamonds-practice"><span class="header-section-number">25</span> Diamonds Practice</a></li>
+<li><a class="nav-link" href="#use-the-diamonds-data-set-found-in-the-ggplot2-package-to-answer-these-questions.-you-may-want-to-review-the-data-before-starting-using-the-help-options."><span class="header-section-number">25.1</span> Use the diamonds data set found in the ggplot2 package to answer these questions. You may want to review the data before starting using the help options.</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/40-diamonds.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/40-diamonds.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
 
 </div>
 </div> <!-- .container -->

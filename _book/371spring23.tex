@@ -574,7 +574,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Wed Dec 14 09:57:15 2022"}
+\CommentTok{\#\textgreater{} [1] "Wed Dec 14 10:08:21 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3129,16 +3129,16 @@ Using the \texttt{iris} data answer:
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1     1317           1325        {-}8}
-\CommentTok{\#\textgreater{}  2  2013     1     1     1325           1330        {-}5}
-\CommentTok{\#\textgreater{}  3  2013     1     1     1725           1720         5}
-\CommentTok{\#\textgreater{}  4  2013     1     2      600            600         0}
-\CommentTok{\#\textgreater{}  5  2013     1     2     1254           1300        {-}6}
-\CommentTok{\#\textgreater{}  6  2013     1     2     1922           1925        {-}3}
-\CommentTok{\#\textgreater{}  7  2013     1     3     1938           1905        33}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1633           1620        13}
-\CommentTok{\#\textgreater{}  9  2013     1     3      809            815        {-}6}
-\CommentTok{\#\textgreater{} 10  2013     1     4     1655           1700        {-}5}
+\CommentTok{\#\textgreater{}  1  2013     1     1      904            906        {-}2}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1657           1650         7}
+\CommentTok{\#\textgreater{}  3  2013     1     1     1301           1150        71}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1652           1652         0}
+\CommentTok{\#\textgreater{}  5  2013     1     2      641            645        {-}4}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1720           1700        20}
+\CommentTok{\#\textgreater{}  7  2013     1     3     1338           1320        18}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1812           1815        {-}3}
+\CommentTok{\#\textgreater{}  9  2013     1     3     1644           1620        24}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1342           1330        12}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}
@@ -3928,6 +3928,180 @@ For Friday, please try to answer these questions:
 \end{enumerate}
 
 \includegraphics{39-penguins_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\hypertarget{diamonds-practice}{%
+\chapter{Diamonds Practice}\label{diamonds-practice}}
+
+\hypertarget{use-the-diamonds-data-set-found-in-the-ggplot2-package-to-answer-these-questions.-you-may-want-to-review-the-data-before-starting-using-the-help-options.}{%
+\section{\texorpdfstring{Use the \texttt{diamonds} data set found in the \texttt{ggplot2} package to answer these questions. You may want to review the data before starting using the help options.}{Use the diamonds data set found in the ggplot2 package to answer these questions. You may want to review the data before starting using the help options.}}\label{use-the-diamonds-data-set-found-in-the-ggplot2-package-to-answer-these-questions.-you-may-want-to-review-the-data-before-starting-using-the-help-options.}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How many diamonds in this set have a \texttt{cut} considered ideal?
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 1 x 1
+#>       n
+#>   <int>
+#> 1 21551
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  How many diamonds in this set have a \texttt{cut} considered ideal and have a color of E?
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 1 x 1
+#>       n
+#>   <int>
+#> 1  3903
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{1}
+  \tightlist
+  \item
+    How many diamonds in this set have a \texttt{cut} considered ideal and have a color of E or D?
+  \end{enumerate}
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 1 x 1
+#>       n
+#>   <int>
+#> 1  6737
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Organize the average price by cut in descending order.
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 5 x 2
+#>   cut        mean
+#>   <ord>     <dbl>
+#> 1 Premium   4584.
+#> 2 Fair      4359.
+#> 3 Very Good 3982.
+#> 4 Good      3929.
+#> 5 Ideal     3458.
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Determine the average price and standard deviation for \texttt{ideal} cut diamonds.
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 1 x 2
+#>    mean std_dev
+#>   <dbl>   <dbl>
+#> 1 3458.   3808.
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Organize the average price by cut and color in descending order.
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 35 x 3
+#> # Groups:   cut [5]
+#>    cut       color price
+#>    <ord>     <ord> <dbl>
+#>  1 Premium   J     6295.
+#>  2 Premium   I     5946.
+#>  3 Very Good I     5256.
+#>  4 Premium   H     5217.
+#>  5 Fair      H     5136.
+#>  6 Very Good J     5104.
+#>  7 Good      I     5079.
+#>  8 Fair      J     4976.
+#>  9 Ideal     J     4918.
+#> 10 Fair      I     4685.
+#> # ... with 25 more rows
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Use ggplot2 to make a plot similar to this:
+\end{enumerate}
+
+\includegraphics{40-diamonds_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{6}
+  \tightlist
+  \item
+    Use ggplot2 to make a plot similar to this:
+  \end{enumerate}
+\end{enumerate}
+
+\includegraphics{40-diamonds_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Predict price of a 2.3 carat diamond with a table of 70 and a depth of 55.
+\end{enumerate}
+
+\begin{verbatim}
+#> [1] 15447.52
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  In descending order, how many diamonds are there of each clarity?
+\end{enumerate}
+
+\begin{verbatim}
+#> # A tibble: 8 x 2
+#>   clarity     n
+#>   <ord>   <int>
+#> 1 SI1     13065
+#> 2 VS2     12258
+#> 3 SI2      9194
+#> 4 VS1      8171
+#> 5 VVS2     5066
+#> 6 VVS1     3655
+#> 7 IF       1790
+#> 8 I1        741
+\end{verbatim}
 
   \bibliography{book.bib,packages.bib}
 

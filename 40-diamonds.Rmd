@@ -1,0 +1,73 @@
+# Diamonds Practice
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = F, warning = F)
+library(ggplot2)
+library(dplyr)
+```
+
+## Use the `diamonds` data set found in the `ggplot2` package to answer these questions. You may want to review the data before starting using the help options.
+
+1. How many diamonds in this set have a `cut` considered ideal?
+
+```{r}
+tally(diamonds %>% filter(cut == "Ideal"))
+```
+
+2. How many diamonds in this set have a `cut` considered ideal and have a color of E?
+
+```{r}
+tally(diamonds %>% filter(cut == "Ideal" & color == "E"))
+```
+
+3. 2. How many diamonds in this set have a `cut` considered ideal and have a color of E or D?
+
+```{r}
+tally(diamonds %>% filter(cut == "Ideal" & color %in% c("E", "D")))
+```
+
+4. Organize the average price by cut in descending order.
+
+```{r}
+diamonds %>% group_by(cut) %>% summarize(mean = mean(price)) %>% arrange(desc(mean))
+```
+
+5. Determine the average price and standard deviation for `ideal` cut diamonds.
+
+```{r}
+diamonds %>% filter(cut == "Ideal") %>% summarize(mean = mean(price), std_dev = sd(price))
+```
+
+6. Organize the average price by cut and color in descending order.
+
+
+```{r}
+diamonds %>% group_by(cut, color) %>% summarize(price = mean(price)) %>% arrange(desc(price))
+```
+
+7. Use ggplot2 to make a plot similar to this:
+
+```{r}
+ggplot(diamonds, aes(x=carat, y=price)) + geom_point()
+```
+
+8. 7. Use ggplot2 to make a plot similar to this:
+
+```{r}
+ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()
+```
+
+9. Predict price of a 2.3 carat diamond with a table of 70 and a depth of 55. 
+
+```{r}
+m1 <- lm(price ~ carat + depth + table, data = diamonds)
+13003.441+(7858.771*2.3) + (55* -151.236) +  (-104.473*70)
+```
+
+10. In descending order, how many diamonds are there of each clarity?
+
+```{r}
+diamonds %>% group_by(clarity) %>% tally() %>% arrange(desc(n))
+```
+
