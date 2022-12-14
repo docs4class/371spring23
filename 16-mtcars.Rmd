@@ -1,0 +1,149 @@
+# Preloaded data and `mtcars`
+
+R comes with several built-in data sets, **which are generally used as demo data for playing with R functions.**
+
+To see the datasets type:
+
+`data()`
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Practicing with `mtcars` data set
+
+This demonstration is based on the datasset `mtcars`.
+
+1. Read in `mtcars`
+```{r}
+data(mtcars)
+```
+
+
+2. View first few rows and last few rows of mtcars dataframe using functions `head()` and `tail()`
+```{r}
+head(mtcars)
+tail(mtcars)
+```
+
+
+
+3. Some info about mtcars dataframe using function `colnames()`, `rownames()`, `summary()`and `dim()`
+```{r}
+colnames(mtcars)
+rownames(mtcars)
+summary(mtcars)
+dim(mtcars)
+```
+
+
+4. To calculate the variance of weight:
+
+```{r}
+var(mtcars$wt)
+```
+
+5. To get the histogram of hp, the code below will produce a histogram:
+
+```{r}
+hist(mtcars$hp)
+```
+
+6. To calculate the quantiles by percent:
+
+```{r}
+quantile(mtcars$wt, c(.2, .4, .8))
+
+```
+
+## Excerises for you:
+
+1. Find the minimum and maximum value of `mpg` 
+2. Find the mean and standard deviation of data variable `mpg` 
+3. What variable has a 3rd quartile value of 180.0? 
+
+4. Create and explain what this means
+
+```{r, echo=FALSE}
+plot(mtcars)
+```
+
+5. Create and explain what this means
+
+```{r, echo=FALSE, fig.dim = c(3, 2)}
+cor(mtcars)
+```
+
+6. Create a variable called `efficiency` which is mpg divided by weight.  Which car has the max `efficiency` and what is this value?
+7. Which variable in this dataset has the greatest standard deviation?
+8. How many cars have 3 gears?
+9. How many cars get more than 17 mpg?
+
+# More simple data wrangling
+
+## a nice, fun little matrix for **you**
+
+```{r, echo=FALSE}
+x <- matrix(1:15,nr=3)
+x
+```
+
+1. Write the code that creates this matrix:
+
+2. Write DIFFERENT code that creates this matrix in an alternate way:
+
+3. In the matrix above, what does `[,4]` mean?
+
+4. What code would return the value in the 3rd column and 3rd row?
+
+5. What single line of would give you the average of the all the numbers in columns 2, 4, and 5 and in rows 1 and 3?
+
+6. turn `x` into a data frame.  
+
+7. How do you **know** you have turned `x` into a data frame?
+
+## More fun (this class is really **awesome** isn't it?)
+
+```{r, echo=FALSE}
+df <- data.frame(matrix(1:100, nr=10))
+
+```
+
+
+```{r}
+df
+```
+
+1.  Consider the dataframe above called `df`.  What would running this code return `sum(df[7,7:10])`
+
+```{r, echo=FALSE, eval=FALSE}
+df <- data.frame(matrix(1:100, nr=10))
+sum(df[7,7:10])
+```
+
+2. How can you tell if an object in R is a dataframe?
+
+
+3. How could you create the dataframe above called `df`?
+
+
+4. What code would return the average of row 2 of `df`?
+
+
+5. Consider `mtcars` dataset that comes preloaded with R that looks like this:
+```{r out.width="50%"}
+head(mtcars)
+```
+
+6. Why do I get this error when I run the code below: `Error in plot(hp, mpg) : object 'hp' not found`?
+
+```{r eval=FALSE}
+plot(hp,mpg)
+```
+
+`Error in plot(hp, mpg) : object 'hp' not found`
+
+> Bonus: What is a topic that you find confusing at this point in class? 
+

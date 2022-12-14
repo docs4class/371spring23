@@ -1,0 +1,29 @@
+# Exam 1 Practice
+
+You should expect to be able to do 7 to 10 of these type problems for your exam (50 minutes).
+
+1. Load the `rock` data set. How many observations and variables are in the `rock` data set?
+2. What was the purpose of this dataset?
+3. What are the units of measurement for `peri`?
+4. In the `rock` data set what is the standard deviation of `area`? **2683.8488617**
+5. How many rocks have an `area` of greater than 4333? **41**
+6. How many rocks have an `area` of greater than 4333 and less than 7333? **14**
+7. Create a variable called `good.fun` which is area divided by perimeter squared.  What is the average of `good.fun`? **0.0020362**
+8. Add a new observation that to this dataframe that has an `area` of 17777, `peri` of 7777, `shape` of 7777, and a `perm` of 7777.  Can you do this?
+9. What is the mean of area for including the new rock you have added?
+10. Using the `women` data set, what is the average BMI for all women?
+11. What is the average BMI for `women`? 
+12. What is the correlation between height and weight in the `women` dataset?
+13. Make a histogram plot of the area variable from `rock`.
+14. Use a bivariate plot of `rock` data to identify which variable are most correlated.  Confirm your answer with a correlation table.  Were you right?
+15. Do this math in R: 3333 squared divided by the square root of 78.
+16. Make this sequence using `rep` and `seq` functions: **1 2 3 1 2 3 1 2 3 1 2 3**
+17. Make this sequence using `rep` and `seq` functions:  **97, 96, 95, 94, 93, 92, 91, 90, 89, 97, 96, 95, 94, 93, 92, 91, 90, 89, 97, 96, 95, 94, 93, 92, 91, 90, 89**
+18. Make this plot:
+![](19-Exam_1_study_guide_files/figure-epub3/unnamed-chunk-1-1.png)<!-- -->
+19. What is the heaviest car in the `mtcars` dataset in kg?
+20. How many cars in `mtcars` dataset have more than 4 cylinders?
+21. Create this dataframe called `Gerry`:
+
+22. Add column called `aa` to `Gerry` which are the numbers **11120, 11121, 11122, 11123, 11124, 11125, 11126, 11127, 11128, 11129**
+23. Have fun.  You are doing `awesome!`

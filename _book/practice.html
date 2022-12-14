@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 19 Practice | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="19.1 starwars Excercises Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm?...">
+<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta property="og:title" content="Chapter 19 Practice | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="19.1 starwars Excercises Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm?...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 19 Practice | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="19.1 starwars Excercises Please use the starwars dataset from the dplyr package to answer the following questions: How may humans are in this dataset? How many characters are taller than 89 cm?...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">3</span> Schedule</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">4</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">5</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">6</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">7</span> Matrices</a></li>
+<li><a class="" href="data-frames.html"><span class="header-section-number">8</span> Data Frames</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">9</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">10</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">11</span> GDH Ice Cream</a></li>
+<li><a class="" href="exam-1-practice.html"><span class="header-section-number">12</span> Exam 1 Practice</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">13</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">14</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">15</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">16</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">17</span> Filters and packages</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">18</span> dplyr</a></li>
+<li><a class="active" href="practice.html"><span class="header-section-number">19</span> Practice</a></li>
+<li><a class="" href="dplyr-and-nycflights13.html"><span class="header-section-number">20</span> dplyr and nycflights13</a></li>
+<li><a class="" href="joining-tables.html"><span class="header-section-number">21</span> Joining tables</a></li>
+<li><a class="" href="more-dplyr-excercies.html"><span class="header-section-number">22</span> More DPLYR Excercies</a></li>
+<li><a class="" href="nfl-data.html"><span class="header-section-number">23</span> NFL Data</a></li>
+<li><a class="" href="palmer-penguins-review.html"><span class="header-section-number">24</span> Palmer Penguins Review</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice" class="section level1" number="19">
+<h1>
+<span class="header-section-number">19</span> Practice<a class="anchor" aria-label="anchor" href="#practice"><i class="fas fa-link"></i></a>
+</h1>
+<div id="starwars-excercises" class="section level2" number="19.1">
+<h2>
+<span class="header-section-number">19.1</span> <code>starwars</code> Excercises<a class="anchor" aria-label="anchor" href="#starwars-excercises"><i class="fas fa-link"></i></a>
+</h2>
+<p>Please use the <code>starwars</code> dataset from the <code>dplyr</code> package to answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>How may humans are in this dataset?</li>
+<li>How many characters are taller than 89 cm?</li>
+<li>How many characters are taller than 37 inches?</li>
+<li>How many characters are taller than 37 inches and weigh more than 55 pounds?</li>
+<li>How many characters are not human or droid?</li>
+<li>How many characters are not human or droid and are taller than 47 inches?</li>
+<li>Which species has the most individuals included in this data set?</li>
+<li>Which species has the tallest individuals on average?</li>
+<li>What is the tallest individual for each species?</li>
+<li>Calculate the BMI for each individual and determine which individual has the highest BMI. Use the formula <code>bmi = mass/((height/100)^2)</code> to calculate bmi.</li>
+<li>Which homeworld has the most individuals included in this data set?</li>
+<li>Which homeworld has the tallest individuals on average?</li>
+<li>What is the tallest individual for each eye color?</li>
+</ol>
+</div>
+<div id="iris-excercises" class="section level2" number="19.2">
+<h2>
+<span class="header-section-number">19.2</span> <code>iris</code> Excercises<a class="anchor" aria-label="anchor" href="#iris-excercises"><i class="fas fa-link"></i></a>
+</h2>
+<p>Please use the <code>iris</code> dataset from base R to answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>How many “virginica” have a petal width of 2.3 or greater in this dataset?</li>
+</ol>
+<pre><code>#&gt;    n
+#&gt; 1 14</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What is the average petal width for each species?</li>
+</ol>
+<pre><code>#&gt; # A tibble: 3 × 2
+#&gt;   Species    avg.petal.width
+#&gt;   &lt;fct&gt;                &lt;dbl&gt;
+#&gt; 1 setosa               0.246
+#&gt; 2 versicolor           1.33 
+#&gt; 3 virginica            2.03</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>How many observations of each species have a petal width of 2.3 or greater in this dataset?</li>
+</ol>
+<pre><code>#&gt; # A tibble: 1 × 2
+#&gt;   Species       n
+#&gt;   &lt;fct&gt;     &lt;int&gt;
+#&gt; 1 virginica    14</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>How many observations of each species have a petal width of 0.5 or greater in this dataset?</li>
+</ol>
+<pre><code>#&gt; # A tibble: 3 × 2
+#&gt;   Species        n
+#&gt;   &lt;fct&gt;      &lt;int&gt;
+#&gt; 1 setosa         2
+#&gt; 2 versicolor    50
+#&gt; 3 virginica     50</code></pre>
+</div>
+<div id="more-practice" class="section level2" number="19.3">
+<h2>
+<span class="header-section-number">19.3</span> More practice<a class="anchor" aria-label="anchor" href="#more-practice"><i class="fas fa-link"></i></a>
+</h2>
+<p>Using the <code>flights</code> data answer:</p>
+<ol style="list-style-type: decimal">
+<li>How many different destinations are in the flights data?</li>
+<li>Which destination has the most flights?</li>
+<li>How many origin airports are in the state of sick, and which has the most flights?</li>
+<li>Which month of the year has the most flights? The least?<br>
+</li>
+<li>Which Carrier has the longest average flight?</li>
+<li>Which carrier has the most flights in the month of October leaving from Newark?</li>
+<li>What percentage of June flights arrive late?</li>
+<li>Which carrier has the most late flights in the month of December?</li>
+<li>This one is hard: for flights leaving JFK, which airline has the greatest percentage of late flights?</li>
+<li>Think of a question that you could ask about this data. What’s the question, and what’s the answer?</li>
+</ol>
+</div>
+<div id="yet-more-practice" class="section level2" number="19.4">
+<h2>
+<span class="header-section-number">19.4</span> Yet more practice<a class="anchor" aria-label="anchor" href="#yet-more-practice"><i class="fas fa-link"></i></a>
+</h2>
+<p>Using the <code>iris</code> data answer:</p>
+<ol style="list-style-type: decimal">
+<li>How many flowers are species “virginica” and have a Sepal.Length greater than 7.5?</li>
+<li>Create a new variable called Sepal.Area with is: <code>Sepal.Area = Sepal.Width * Sepal.Length</code>
+</li>
+<li>What is the maximum new Sepal.Area?</li>
+<li>Calculate the average Sepal.Area for each species and organize these values in descending order.</li>
+<li>Find the minimum Sepal.Area for each species and organize these values in descending order.</li>
+<li>How many flowers of each species have Sepal.Area of less than 15?</li>
+<li>What is the mean sepal length for flowers with a Sepal. Area of less than 15?</li>
+</ol>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="dplyr.html"><span class="header-section-number">18</span> dplyr</a></div>
+<div class="next"><a href="dplyr-and-nycflights13.html"><span class="header-section-number">20</span> dplyr and nycflights13</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice"><span class="header-section-number">19</span> Practice</a></li>
+<li><a class="nav-link" href="#starwars-excercises"><span class="header-section-number">19.1</span> starwars Excercises</a></li>
+<li><a class="nav-link" href="#iris-excercises"><span class="header-section-number">19.2</span> iris Excercises</a></li>
+<li><a class="nav-link" href="#more-practice"><span class="header-section-number">19.3</span> More practice</a></li>
+<li><a class="nav-link" href="#yet-more-practice"><span class="header-section-number">19.4</span> Yet more practice</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/33-practice.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/33-practice.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-12-14.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

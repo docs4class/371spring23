@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 18 dplyr | BADM 371 Intro to Data Analytics</title>
+<meta name="author" content="BADM 371">
+<meta name="description" content="18.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. https://dplyr.tidyverse.org/articles/dplyr.html Your life is about to...">
+<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta property="og:title" content="Chapter 18 dplyr | BADM 371 Intro to Data Analytics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="18.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. https://dplyr.tidyverse.org/articles/dplyr.html Your life is about to...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 18 dplyr | BADM 371 Intro to Data Analytics">
+<meta name="twitter:description" content="18.1 Introduction For more help PLEASE check out Introduction to dplyr introducing the key functionality of the dplyr package. https://dplyr.tidyverse.org/articles/dplyr.html Your life is about to...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BADM 371 Intro to Data Analytics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="syllabus.html"><span class="header-section-number">2</span> Syllabus</a></li>
+<li><a class="" href="schedule.html"><span class="header-section-number">3</span> Schedule</a></li>
+<li><a class="" href="r-basics.html"><span class="header-section-number">4</span> R basics and workflows</a></li>
+<li><a class="" href="objects-and-arithmetic.html"><span class="header-section-number">5</span> Objects and Arithmetic</a></li>
+<li><a class="" href="summaries-and-subscripting.html"><span class="header-section-number">6</span> Summaries and Subscripting</a></li>
+<li><a class="" href="matrices.html"><span class="header-section-number">7</span> Matrices</a></li>
+<li><a class="" href="data-frames.html"><span class="header-section-number">8</span> Data Frames</a></li>
+<li><a class="" href="preloaded-data-and-mtcars.html"><span class="header-section-number">9</span> Preloaded data and mtcars</a></li>
+<li><a class="" href="more-simple-data-wrangling.html"><span class="header-section-number">10</span> More simple data wrangling</a></li>
+<li><a class="" href="gdh-ice-cream.html"><span class="header-section-number">11</span> GDH Ice Cream</a></li>
+<li><a class="" href="exam-1-practice.html"><span class="header-section-number">12</span> Exam 1 Practice</a></li>
+<li><a class="" href="quick-linear-regression.html"><span class="header-section-number">13</span> Quick Linear Regression</a></li>
+<li><a class="" href="linear-regression-with-mtcars.html"><span class="header-section-number">14</span> Linear Regression with mtcars</a></li>
+<li><a class="" href="deeper-linear-regression.html"><span class="header-section-number">15</span> Deeper Linear Regression</a></li>
+<li><a class="" href="linear-regression-practice.html"><span class="header-section-number">16</span> Linear Regression Practice</a></li>
+<li><a class="" href="filters-and-packages.html"><span class="header-section-number">17</span> Filters and packages</a></li>
+<li><a class="active" href="dplyr.html"><span class="header-section-number">18</span> dplyr</a></li>
+<li><a class="" href="practice.html"><span class="header-section-number">19</span> Practice</a></li>
+<li><a class="" href="dplyr-and-nycflights13.html"><span class="header-section-number">20</span> dplyr and nycflights13</a></li>
+<li><a class="" href="joining-tables.html"><span class="header-section-number">21</span> Joining tables</a></li>
+<li><a class="" href="more-dplyr-excercies.html"><span class="header-section-number">22</span> More DPLYR Excercies</a></li>
+<li><a class="" href="nfl-data.html"><span class="header-section-number">23</span> NFL Data</a></li>
+<li><a class="" href="palmer-penguins-review.html"><span class="header-section-number">24</span> Palmer Penguins Review</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr" class="section level1" number="18">
+<h1>
+<span class="header-section-number">18</span> dplyr<a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-3" class="section level2" number="18.1">
+<h2>
+<span class="header-section-number">18.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>For more help <strong>PLEASE</strong> check out <a href="https://dplyr.tidyverse.org/articles/dplyr.html">Introduction to dplyr</a> introducing the key functionality of the dplyr package.</p>
+<p><a href="https://dplyr.tidyverse.org/articles/dplyr.html" class="uri">https://dplyr.tidyverse.org/articles/dplyr.html</a></p>
+<blockquote>
+<p>Your life is about to change. For the better, even.</p>
+</blockquote>
+</div>
+<div id="a-neat-resource" class="section level2" number="18.2">
+<h2>
+<span class="header-section-number">18.2</span> A Neat Resource<a class="anchor" aria-label="anchor" href="#a-neat-resource"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">RStudio’s Data Wrangling Cheat Sheet</a> for dplyr and tidyr</li>
+</ul>
+</div>
+<div id="single-table-verbs" class="section level2" number="18.3">
+<h2>
+<span class="header-section-number">18.3</span> Single table verbs<a class="anchor" aria-label="anchor" href="#single-table-verbs"><i class="fas fa-link"></i></a>
+</h2>
+<p><code>dplyr</code> aims to provide a function for each basic verb of data manipulation. These verbs can be organised into three categories based on the component of the dataset that they work with:</p>
+<p>Rows:</p>
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> chooses rows based on column values.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice()</a></code> chooses rows based on location.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> changes the order of the rows.</li>
+</ul>
+<p>Columns:</p>
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> changes whether or not a column is included.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code> changes the name of columns.
+<code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> changes the values of columns and creates new columns.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate()</a></code> changes the order of the columns.
+Groups of rows:</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> collapses a group into a single row. It’s not that useful until we learn the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> verb below.</li>
+</ul>
+</div>
+<div id="the-pipe" class="section level2" number="18.4">
+<h2>
+<span class="header-section-number">18.4</span> The pipe<a class="anchor" aria-label="anchor" href="#the-pipe"><i class="fas fa-link"></i></a>
+</h2>
+<p>All of the <code>dplyr</code> functions take a data frame (or tibble) as the first argument. You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).</p>
+<blockquote>
+<p>What is this: <code>%&gt;%</code>?</p>
+</blockquote>
+</div>
+<div id="loading-dplyr" class="section level2" number="18.5">
+<h2>
+<span class="header-section-number">18.5</span> Loading <code>dplyr</code><a class="anchor" aria-label="anchor" href="#loading-dplyr"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># You should already have done this but you'll need it</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"dplyr"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="starwars-examples" class="section level2" number="18.6">
+<h2>
+<span class="header-section-number">18.6</span> <code>starwars</code> examples<a class="anchor" aria-label="anchor" href="#starwars-examples"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+
+<span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Droid"</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 6 × 14</span>
+<span class="co">#&gt;   name   height  mass hair_color skin_color  eye_color</span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;    </span>
+<span class="co">#&gt; 1 C-3PO     167    75 &lt;NA&gt;       gold        yellow   </span>
+<span class="co">#&gt; 2 R2-D2      96    32 &lt;NA&gt;       white, blue red      </span>
+<span class="co">#&gt; 3 R5-D4      97    32 &lt;NA&gt;       white, red  red      </span>
+<span class="co">#&gt; 4 IG-88     200   140 none       metal       red      </span>
+<span class="co">#&gt; 5 R4-P17     96    NA none       silver, red red, blue</span>
+<span class="co">#&gt; 6 BB8        NA    NA none       none        black    </span>
+<span class="co">#&gt; # … with 8 more variables: birth_year &lt;dbl&gt;, sex &lt;chr&gt;,</span>
+<span class="co">#&gt; #   gender &lt;chr&gt;, homeworld &lt;chr&gt;, species &lt;chr&gt;,</span>
+<span class="co">#&gt; #   films &lt;list&gt;, vehicles &lt;list&gt;, starships &lt;list&gt;</span>
+
+
+<span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">ends_with</a></span><span class="op">(</span><span class="st">"color"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 87 × 4</span>
+<span class="co">#&gt;    name               hair_color    skin_color  eye_color</span>
+<span class="co">#&gt;    &lt;chr&gt;              &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    </span>
+<span class="co">#&gt;  1 Luke Skywalker     blond         fair        blue     </span>
+<span class="co">#&gt;  2 C-3PO              &lt;NA&gt;          gold        yellow   </span>
+<span class="co">#&gt;  3 R2-D2              &lt;NA&gt;          white, blue red      </span>
+<span class="co">#&gt;  4 Darth Vader        none          white       yellow   </span>
+<span class="co">#&gt;  5 Leia Organa        brown         light       brown    </span>
+<span class="co">#&gt;  6 Owen Lars          brown, grey   light       blue     </span>
+<span class="co">#&gt;  7 Beru Whitesun lars brown         light       blue     </span>
+<span class="co">#&gt;  8 R5-D4              &lt;NA&gt;          white, red  red      </span>
+<span class="co">#&gt;  9 Biggs Darklighter  black         light       brown    </span>
+<span class="co">#&gt; 10 Obi-Wan Kenobi     auburn, white fair        blue-gray</span>
+<span class="co">#&gt; # … with 77 more rows</span>
+
+
+<span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">name</span>, bmi <span class="op">=</span> <span class="va">mass</span> <span class="op">/</span> <span class="op">(</span><span class="op">(</span><span class="va">height</span> <span class="op">/</span> <span class="fl">100</span><span class="op">)</span>  <span class="op">^</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name</span><span class="op">:</span><span class="va">mass</span>, <span class="va">bmi</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 87 × 4</span>
+<span class="co">#&gt;    name               height  mass   bmi</span>
+<span class="co">#&gt;    &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 Luke Skywalker        172    77  26.0</span>
+<span class="co">#&gt;  2 C-3PO                 167    75  26.9</span>
+<span class="co">#&gt;  3 R2-D2                  96    32  34.7</span>
+<span class="co">#&gt;  4 Darth Vader           202   136  33.3</span>
+<span class="co">#&gt;  5 Leia Organa           150    49  21.8</span>
+<span class="co">#&gt;  6 Owen Lars             178   120  37.9</span>
+<span class="co">#&gt;  7 Beru Whitesun lars    165    75  27.5</span>
+<span class="co">#&gt;  8 R5-D4                  97    32  34.0</span>
+<span class="co">#&gt;  9 Biggs Darklighter     183    84  25.1</span>
+<span class="co">#&gt; 10 Obi-Wan Kenobi        182    77  23.2</span>
+<span class="co">#&gt; # … with 77 more rows</span>
+
+
+<span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">mass</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 87 × 14</span>
+<span class="co">#&gt;    name         height  mass hair_color skin_color eye_color</span>
+<span class="co">#&gt;    &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;    </span>
+<span class="co">#&gt;  1 Jabba Desil…    175  1358 &lt;NA&gt;       green-tan… orange   </span>
+<span class="co">#&gt;  2 Grievous        216   159 none       brown, wh… green, y…</span>
+<span class="co">#&gt;  3 IG-88           200   140 none       metal      red      </span>
+<span class="co">#&gt;  4 Darth Vader     202   136 none       white      yellow   </span>
+<span class="co">#&gt;  5 Tarfful         234   136 brown      brown      blue     </span>
+<span class="co">#&gt;  6 Owen Lars       178   120 brown, gr… light      blue     </span>
+<span class="co">#&gt;  7 Bossk           190   113 none       green      red      </span>
+<span class="co">#&gt;  8 Chewbacca       228   112 brown      unknown    blue     </span>
+<span class="co">#&gt;  9 Jek Tono Po…    180   110 brown      fair       blue     </span>
+<span class="co">#&gt; 10 Dexter Jett…    198   102 none       brown      yellow   </span>
+<span class="co">#&gt; # … with 77 more rows, and 8 more variables:</span>
+<span class="co">#&gt; #   birth_year &lt;dbl&gt;, sex &lt;chr&gt;, gender &lt;chr&gt;,</span>
+<span class="co">#&gt; #   homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span>
+<span class="co">#&gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;</span>
+
+<span class="va">starwars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>
+    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,
+    mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mass</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span>
+    <span class="va">n</span> <span class="op">&gt;</span> <span class="fl">1</span>,
+    <span class="va">mass</span> <span class="op">&gt;</span> <span class="fl">50</span>
+  <span class="op">)</span>
+<span class="co">#&gt; # A tibble: 8 × 3</span>
+<span class="co">#&gt;   species      n  mass</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Droid        6  69.8</span>
+<span class="co">#&gt; 2 Gungan       3  74  </span>
+<span class="co">#&gt; 3 Human       35  82.8</span>
+<span class="co">#&gt; 4 Kaminoan     2  88  </span>
+<span class="co">#&gt; 5 Mirialan     2  53.1</span>
+<span class="co">#&gt; 6 Twi'lek      2  55  </span>
+<span class="co">#&gt; 7 Wookiee      2 124  </span>
+<span class="co">#&gt; 8 Zabrak       2  80</span></code></pre></div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="filters-and-packages.html"><span class="header-section-number">17</span> Filters and packages</a></div>
+<div class="next"><a href="practice.html"><span class="header-section-number">19</span> Practice</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dplyr"><span class="header-section-number">18</span> dplyr</a></li>
+<li><a class="nav-link" href="#introduction-3"><span class="header-section-number">18.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#a-neat-resource"><span class="header-section-number">18.2</span> A Neat Resource</a></li>
+<li><a class="nav-link" href="#single-table-verbs"><span class="header-section-number">18.3</span> Single table verbs</a></li>
+<li><a class="nav-link" href="#the-pipe"><span class="header-section-number">18.4</span> The pipe</a></li>
+<li><a class="nav-link" href="#loading-dplyr"><span class="header-section-number">18.5</span> Loading dplyr</a></li>
+<li><a class="nav-link" href="#starwars-examples"><span class="header-section-number">18.6</span> starwars examples</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/30-dplyr.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/30-dplyr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BADM 371 Intro to Data Analytics</strong>" was written by BADM 371. It was last built on 2022-12-14.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+# dplyr
+
+## Introduction
+
+For more help **PLEASE** check out  [Introduction to dplyr](https://dplyr.tidyverse.org/articles/dplyr.html) introducing the key functionality of the dplyr package.
+
+https://dplyr.tidyverse.org/articles/dplyr.html
+
+> Your life is about to change.  For the better, even.
+
+
+## A Neat Resource
+
+* [RStudio's Data Wrangling Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) for dplyr and tidyr
+
+
+## Single table verbs
+
+`dplyr` aims to provide a function for each basic verb of data manipulation. These verbs can be organised into three categories based on the component of the dataset that they work with:
+
+Rows:
+
+- `filter()` chooses rows based on column values.
+- `slice()` chooses rows based on location.
+- `arrange()` changes the order of the rows.
+    
+Columns:
+
+- `select()` changes whether or not a column is included.
+- `rename()` changes the name of columns.
+        `mutate()` changes the values of columns and creates new columns.
+- `relocate()` changes the order of the columns.
+    Groups of rows:
+- `summarise()` collapses a group into a single row.  It’s not that useful until we learn the `group_by()` verb below.
+
+## The pipe
+
+All of the `dplyr` functions take a data frame (or tibble) as the first argument.  You can use the pipe to rewrite multiple operations that you can read left-to-right, top-to-bottom (reading the pipe operator as “then”).
+
+> What is this: `%>%`?
+
+## Loading `dplyr` 
+
+```{r eval=FALSE}
+# You should already have done this but you'll need it
+install.packages("dplyr")
+```
+
+
+```{r echo=FALSE}
+# load packages
+suppressMessages(library(dplyr))
+```
+
+## `starwars` examples
+
+```{r eval=TRUE}
+library(dplyr)
+
+starwars %>% 
+  filter(species == "Droid")
+
+
+starwars %>% 
+  select(name, ends_with("color"))
+
+
+starwars %>% 
+  mutate(name, bmi = mass / ((height / 100)  ^ 2)) %>%
+  select(name:mass, bmi)
+
+
+starwars %>% 
+  arrange(desc(mass))
+
+starwars %>%
+  group_by(species) %>%
+  summarise(
+    n = n(),
+    mass = mean(mass, na.rm = TRUE)
+  ) %>%
+  filter(
+    n > 1,
+    mass > 50
+  )
+```
+
