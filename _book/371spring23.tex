@@ -33,14 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={BADM 371 Intro to Data Analytics},
-  pdfauthor={BADM 371},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -114,10 +106,18 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={BADM 371 Intro to Data Analytics},
+  pdfauthor={BADM 371},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{BADM 371 Intro to Data Analytics}
 \author{BADM 371}
-\date{2022-12-14}
+\date{2022-12-19}
 
 \begin{document}
 \maketitle
@@ -339,35 +339,41 @@ This is a tentative schedule, \textbf{BUT} I will do my very best to stick to it
 \section*{Spring 2023}\label{spring-2023}}
 \addcontentsline{toc}{section}{Spring 2023}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-Date & Topic \\
-\midrule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Topic
+\end{minipage} \\
+\midrule()
 \endhead
 Monday, January 9, 2023 & First Day Fun! \\
 Wednesday, January 11, 2023 & R basics and install \\
-Friday, January 13, 2023 & R basics and workflows \\
+Friday, January 13, 2023 & \textbf{About Me Due} and R basics and workflows \\
 Monday, January 16, 2023 & Martin Luther King, Jr.~Holiday \\
 Wednesday, January 18, 2023 & Objects and Arithmetic \\
-Friday, January 20, 2023 & QUIZ \\
+Friday, January 20, 2023 & \textbf{QUIZ: R Basics} \\
 Monday, January 23, 2023 & Summaries and Subscripting \\
 Wednesday, January 25, 2023 & Case: GDH Ice Cream \\
-Friday, January 27, 2023 & QUIZ \\
+Friday, January 27, 2023 & \textbf{QUIZ: dataframes} \\
 Monday, January 30, 2023 & Matrices and \texttt{mtcars} \\
-Wednesday, February 1, 2023 & Real Data \\
-Friday, February 3, 2023 & QUIZ \\
+Wednesday, February 1, 2023 & Real Data \& Summary Statistics \\
+Friday, February 3, 2023 & \textbf{QUIZ: Real Data \& Statistics} \\
 Monday, February 6, 2023 & Review \\
 Wednesday, February 8, 2023 & \textbf{EXAM 1} \\
-Friday, February 10, 2023 & Exam 1 Review \\
-Monday, February 13, 2023 & Linear Regression \\
-Wednesday, February 15, 2023 & Mulivariate Regression \\
-Friday, February 17, 2023 & Quiz \\
-Monday, February 20, 2023 & Social Dilemma and Review \\
-Wednesday, February 22, 2023 & dplyr \\
-Friday, February 24, 2023 & dplyr \\
-Monday, February 27, 2023 & dplyr \\
+Friday, February 10, 2023 & Linear Regression \\
+Monday, February 13, 2023 & Multivariate Regression \\
+Wednesday, February 15, 2023 & \textbf{QUIZ: Linear Reg} \\
+Friday, February 17, 2023 & Social Dilemma \& SEDSI \\
+Monday, February 20, 2023 & Social Dilemma and dplyr \\
+Wednesday, February 22, 2023 & dplyr: filter and select \\
+Friday, February 24, 2023 & \textbf{QUIZ: BASIC dplyr} \\
+Monday, February 27, 2023 & dplyr: group\_by, summarise, tally, mutate \\
 Wednesday, March 1, 2023 & Real data \\
-Friday, March 3, 2023 & Real data \\
+Friday, March 3, 2023 & \textbf{QUIZ: more, better dplyr} \\
 Monday, March 6, 2023 & Review \\
 Wednesday, March 8, 2023 & \textbf{EXAM 2} \\
 Friday, March 10, 2023 & Strategic Plan Launch (No classes) \\
@@ -376,24 +382,24 @@ Wednesday, March 15, 2023 & SPRING BREAK \\
 Friday, March 17, 2023 & SPRING BREAK \\
 Monday, March 20, 2023 & NFL \\
 Wednesday, March 22, 2023 & NFL \\
-Friday, March 24, 2023 & NFL \\
+Friday, March 24, 2023 & \textbf{QUIZ: NFL} \\
 Monday, March 27, 2023 & ggplot2 \\
-Wednesday, March 29, 2023 & QUIZ \\
-Friday, March 31, 2023 & ggplot2 \\
+Wednesday, March 29, 2023 & ggplot2 \\
+Friday, March 31, 2023 & \textbf{QUIZ: ggplot2} \\
 Monday, April 3, 2023 & Advising Week \\
 Wednesday, April 5, 2023 & Advising Week \\
 Friday, April 7, 2023 & Easter Holidays \\
 Monday, April 10, 2023 & Easter Holidays \\
-Wednesday, April 12, 2023 & \textbf{EXAM 3} \\
-Friday, April 14, 2023 & Registration Week \\
-Monday, April 17, 2023 & \\
-Wednesday, April 19, 2023 & \\
-Friday, April 21, 2023 & \\
-Monday, April 24, 2023 & \\
-Wednesday, April 26, 2023 & \\
+Wednesday, April 12, 2023 & Registration Week \\
+Friday, April 14, 2023 & \textbf{EXAM 3} \\
+Monday, April 17, 2023 & Rmarkdown \\
+Wednesday, April 19, 2023 & Rmarkdown \\
+Friday, April 21, 2023 & \textbf{QUIZ: ggplot2} \\
+Monday, April 24, 2023 & Review \\
+Wednesday, April 26, 2023 & Review \\
 Friday, April 28, 2023 & \textbf{LAST DAY OF CLASSES} \\
 Wednesday, May 3, 2023 & \textbf{FINAL 1:30 p.m. -- E period } \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 \hypertarget{r-basics}{%
@@ -574,7 +580,7 @@ Not all functions have (or require) arguments:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Wed Dec 14 10:08:21 2022"}
+\CommentTok{\#\textgreater{} [1] "Mon Dec 19 07:40:50 2022"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3129,16 +3135,16 @@ Using the \texttt{iris} data answer:
 \CommentTok{\#\textgreater{} \# Groups:   month, day [365]}
 \CommentTok{\#\textgreater{}     year month   day dep\_time sched\_dep\_time dep\_delay}
 \CommentTok{\#\textgreater{}    \textless{}int\textgreater{} \textless{}int\textgreater{} \textless{}int\textgreater{}    \textless{}int\textgreater{}          \textless{}int\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1  2013     1     1      904            906        {-}2}
-\CommentTok{\#\textgreater{}  2  2013     1     1     1657           1650         7}
-\CommentTok{\#\textgreater{}  3  2013     1     1     1301           1150        71}
-\CommentTok{\#\textgreater{}  4  2013     1     2     1652           1652         0}
-\CommentTok{\#\textgreater{}  5  2013     1     2      641            645        {-}4}
-\CommentTok{\#\textgreater{}  6  2013     1     2     1720           1700        20}
-\CommentTok{\#\textgreater{}  7  2013     1     3     1338           1320        18}
-\CommentTok{\#\textgreater{}  8  2013     1     3     1812           1815        {-}3}
-\CommentTok{\#\textgreater{}  9  2013     1     3     1644           1620        24}
-\CommentTok{\#\textgreater{} 10  2013     1     4     1342           1330        12}
+\CommentTok{\#\textgreater{}  1  2013     1     1     1719           1720        {-}1}
+\CommentTok{\#\textgreater{}  2  2013     1     1     1453           1500        {-}7}
+\CommentTok{\#\textgreater{}  3  2013     1     1     1623           1620         3}
+\CommentTok{\#\textgreater{}  4  2013     1     2     1457           1459        {-}2}
+\CommentTok{\#\textgreater{}  5  2013     1     2      617            615         2}
+\CommentTok{\#\textgreater{}  6  2013     1     2     1109           1115        {-}6}
+\CommentTok{\#\textgreater{}  7  2013     1     3      801            803        {-}2}
+\CommentTok{\#\textgreater{}  8  2013     1     3     1801           1635        86}
+\CommentTok{\#\textgreater{}  9  2013     1     3      957           1001        {-}4}
+\CommentTok{\#\textgreater{} 10  2013     1     4     1343           1218        85}
 \CommentTok{\#\textgreater{} \# ... with 1,085 more rows, and 13 more variables:}
 \CommentTok{\#\textgreater{} \#   arr\_time \textless{}int\textgreater{}, sched\_arr\_time \textless{}int\textgreater{}, arr\_delay \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   carrier \textless{}chr\textgreater{}, flight \textless{}int\textgreater{}, tailnum \textless{}chr\textgreater{},}

@@ -156,7 +156,7 @@ Not all functions have (or require) arguments:
 
 ```r
 date()
-#> [1] "Wed Dec 14 10:09:38 2022"
+#> [1] "Mon Dec 19 07:42:06 2022"
 ```
 
 Now look at your workspace -- in the upper right pane. The workspace is where user-defined objects accumulate. You can also get a listing of these objects with commands:
