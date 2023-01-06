@@ -8,7 +8,7 @@ You will first intall R and then. RStudio.
 
 - [Installing R](https://cran.case.edu/)
 
-- [Installing RStudio](https://www.rstudio.com/products/rstudio/download/)
+- [Installing RStudio from posit ](https://posit.co/download/rstudio-desktop/)
 
 - [Customizing RStudio](https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE)
 
@@ -156,7 +156,7 @@ Not all functions have (or require) arguments:
 
 ```r
 date()
-#> [1] "Mon Dec 19 07:42:06 2022"
+#> [1] "Fri Jan  6 08:26:56 2023"
 ```
 
 Now look at your workspace -- in the upper right pane. The workspace is where user-defined objects accumulate. You can also get a listing of these objects with commands:

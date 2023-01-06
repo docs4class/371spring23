@@ -37,6 +37,8 @@ This course will be focused on both understanding and applying key business anal
 
 Exams will cover assigned chapters in the textbook, other assigned readings, lectures, class exercises, class discussions, videos, and guest speakers. I will typically allocate time prior to each exam to clearly identify the body of knowledge each test will cover and to answer questions about the format and objectives of the exam.
 
+If you miss an exam without approval from the instructor PRIOR to the exam, you may receive a zero grade for the exam.  See attendance section below for more details.
+
 
 ### Quizzes -- **DON'T MISS CLASS**
 - The average of all quizzes and assignments will comprise the Quizzes and Assignments - 20% portion of your final grade

@@ -8,7 +8,7 @@ Date | Topic |
 |:-------|:------				
 | 	Monday, January 9, 2023	| 	First Day Fun!	| 
 | 	Wednesday, January 11, 2023	| 	R basics and install	| 
-| 	Friday, January 13, 2023	| 	**About Me Due** and R basics and workflows	| 
+| 	Friday, January 13, 2023	| 	**About Me Due**; R basics	| 
 | 	Monday, January 16, 2023	| 	Martin Luther King, Jr. Holiday	| 
 | 	Wednesday, January 18, 2023	| 	Objects and Arithmetic	| 
 | 	Friday, January 20, 2023	| 	**QUIZ: R Basics** 	| 
