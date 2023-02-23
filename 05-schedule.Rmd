@@ -22,17 +22,17 @@ Date | Topic |
 | 	Wednesday, February 8, 2023	| 	**EXAM 1**	| 
 | 	Friday, February 10, 2023	| 	Linear Regression	| 
 | 	Monday, February 13, 2023	| 	Multivariate Regression	| 
-| 	Wednesday, February 15, 2023	| 	**QUIZ: Linear Reg**	| 
-| 	Friday, February 17, 2023	| Social Dilemma & SEDSI		| 
-| 	Monday, February 20, 2023	| 	Social Dilemma and dplyr	| 
-| 	Wednesday, February 22, 2023	| 	dplyr: filter and select	| 
-| 	Friday, February 24, 2023	| 	**QUIZ: BASIC dplyr**	| 
-| 	Monday, February 27, 2023	|	dplyr: group_by, summarise, tally, mutate	| 
-| 	Wednesday, March 1, 2023	| Real data	 	| 
-| 	Friday, March 3, 2023	| **QUIZ: more, better dplyr**	 	| 
-| 	Monday, March 6, 2023	| 	Review	| 
+| 	Wednesday, February 15, 2023	| 	Review	| 
+| 	Friday, February 17, 2023	|  SEDSI		| 
+| 	Monday, February 20, 2023	| 	Linear Regression	| 
+| 	Wednesday, February 22, 2023	| 	Multivariate Regression	| 
+| 	Friday, February 24, 2023	| 	**QUIZ: Linear Reg**	| 
+| 	Monday, February 27, 2023	|	dply: filter & sperate	| 
+| 	Wednesday, March 1, 2023	| Real data	dplyr: group_by, summarise, tally, mutate	| 
+| 	Friday, March 3, 2023	| 	**QUIZ: BASIC dplyr**	| 
+| 	Monday, March 6, 2023	| 	Exam Prep	| 
 | 	Wednesday, March 8, 2023	| 	**EXAM 2**	| 
-| 	Friday, March 10, 2023	| 	Strategic Plan Launch (No classes)	| 
+| 	Friday, March 10, 2023	| 	Review Exam	| 
 |	Monday, March 13, 2023	| 	SPRING BREAK	| 
 | 	Wednesday, March 15, 2023	| 	SPRING BREAK	| 
 |	Friday, March 17, 2023	| 	SPRING BREAK	| 
@@ -55,4 +55,5 @@ Date | Topic |
 |	Wednesday, April 26, 2023	| 	Review	| 
 |	Friday, April 28, 2023	| 	**LAST DAY OF CLASSES**	| 
 |	Wednesday, May 3, 2023	| 	**FINAL 1:30 p.m. – E period **	| 
+
 
